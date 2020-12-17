@@ -5,22 +5,21 @@
     <title>موقــعي</title>
 
     <style>
-      /* لا تغير الكود التالي اكتب كودك تحته */
-      .square {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 150px;
-        height: 350px;
-        background-color: black;
+      .circle.red:hover {
+        transition: all 0.5s;
+        background-color: red;
+        z-index: 0;
+        opacity: 1 !important;
       }
 
-      .circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        border: 0.5px solid white;
+      .circle.yellow:hover {
+        transition: all 0.5s;
+        background-color: yellow;
+      }
+
+      .circle.green:hover {
+        transition: all 0.5s;
+        background-color: green;
       }
 
       /* 👇 اكتب الكود هنا */
@@ -50,9 +49,14 @@
     <!-- style تلميح: ستغير خصائص الكلاسات اللي فوق داخل -->
     <!----------------====================---------------->
     <div class="square">
-      <div class="circle 1"></div>
-      <div class="circle 2"></div>
-      <div class="circle 3"></div>
+      <div class="circle red" style="opacity: 0">
+        <img
+          style="z-index: -1; position: relative"
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkY1MDUwOyIgZD0iTTM0Ni4zMjksMEgxNjUuNjcxYy0xMC4wNTksMC0xOS43MDUsMy45OTUtMjYuODE3LDExLjEwOUwxMS4xMDksMTM4Ljg1Mw0KCUMzLjk5NSwxNDUuOTY1LDAsMTU1LjYxMiwwLDE2NS42NzFWMzQ2LjMzYzAsMTAuMDU5LDMuOTk1LDE5LjcwNSwxMS4xMDksMjYuODE3bDEyNy43NDUsMTI3Ljc0NQ0KCWM3LjExMiw3LjExMiwxNi43NTksMTEuMTA5LDI2LjgxNywxMS4xMDlIMzQ2LjMzYzEwLjA1OSwwLDE5LjcwNS0zLjk5NSwyNi44MTctMTEuMTA5bDEyNy43NDUtMTI3Ljc0NQ0KCWM3LjExMi03LjExMiwxMS4xMDktMTYuNzYsMTEuMTA5LTI2LjgxN1YxNjUuNjcxYzAtMTAuMDU5LTMuOTk1LTE5LjcwNS0xMS4xMDktMjYuODE3TDM3My4xNDcsMTEuMTA5DQoJQzM2Ni4wMzUsMy45OTUsMzU2LjM4OCwwLDM0Ni4zMjksMHoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNDODQxNDY7IiBkPSJNOTQuODE1LDM3OS4yNTljMC0xNzEuODM4LDEwNi4zNjItMzE4LjczOSwyNTYuNzk5LTM3OC43MzdDMzQ5Ljg2NCwwLjI3NSwzNDguMTE3LDAsMzQ2LjMyOSwwDQoJSDE2NS42NzFjLTEwLjA1OSwwLTE5LjcwNSwzLjk5NS0yNi44MTcsMTEuMTA5TDExLjEwOSwxMzguODUzQzMuOTk2LDE0NS45NjUsMCwxNTUuNjExLDAsMTY1LjY3MVYzNDYuMzMNCgljMCwxMC4wNTksMy45OTYsMTkuNzA1LDExLjEwOSwyNi44MTdsOTMuMTAzLDkzLjEwM0M5OC4xMTQsNDM4LjIwOSw5NC44MTUsNDA5LjEyNiw5NC44MTUsMzc5LjI1OXoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBkPSJNMjQ2LjUxOSwxODcuMjU5aC03NS44NTJjLTYuNTQ2LDAtMTEuODUyLDUuMzA2LTExLjg1MiwxMS44NTJzNS4zMDYsMTEuODUyLDExLjg1MiwxMS44NTJoMjYuMDc0DQoJCXYxMDEuOTI2YzAsNi41NDYsNS4zMDYsMTEuODUyLDExLjg1MiwxMS44NTJjNi41NDYsMCwxMS44NTItNS4zMDYsMTEuODUyLTExLjg1MlYyMTAuOTYzaDI2LjA3NA0KCQljNi41NDYsMCwxMS44NTItNS4zMDYsMTEuODUyLTExLjg1MlMyNTMuMDY0LDE4Ny4yNTksMjQ2LjUxOSwxODcuMjU5eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBkPSJNMzEyLjg4OSwxODcuMjU5Yy0yNy40NDQsMC00OS43NzgsMjIuMzI5LTQ5Ljc3OCw0OS43Nzh2MzcuOTI2DQoJCWMwLDI3LjQ0OSwyMi4zMzQsNDkuNzc4LDQ5Ljc3OCw0OS43NzhzNDkuNzc4LTIyLjMyOSw0OS43NzgtNDkuNzc4di0zNy45MjZDMzYyLjY2NywyMDkuNTg4LDM0MC4zMzMsMTg3LjI1OSwzMTIuODg5LDE4Ny4yNTl6DQoJCSBNMzM4Ljk2MywyNzQuOTYzYzAsMTQuMzgtMTEuNjk0LDI2LjA3NC0yNi4wNzQsMjYuMDc0cy0yNi4wNzQtMTEuNjk0LTI2LjA3NC0yNi4wNzR2LTM3LjkyNmMwLTE0LjM4LDExLjY5NC0yNi4wNzQsMjYuMDc0LTI2LjA3NA0KCQlzMjYuMDc0LDExLjY5NCwyNi4wNzQsMjYuMDc0VjI3NC45NjN6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik00MjEuOTI2LDE4Ny4yNTloLTMzLjE4NWMtNi41NDYsMC0xMS44NTIsNS4zMDYtMTEuODUyLDExLjg1MnYxMTMuNzc4DQoJCWMwLDYuNTQ2LDUuMzA2LDExLjg1MiwxMS44NTIsMTEuODUyYzYuNTQ2LDAsMTEuODUyLTUuMzA2LDExLjg1Mi0xMS44NTJ2LTM1LjU1NmgyMS4zMzNjMjQuODMzLDAsNDUuMDM3LTIwLjIwNCw0NS4wMzctNDUuMDM3DQoJCVM0NDYuNzU5LDE4Ny4yNTksNDIxLjkyNiwxODcuMjU5eiBNNDIxLjkyNiwyNTMuNjNoLTIxLjMzM3YtNDIuNjY3aDIxLjMzM2MxMS43NTksMCwyMS4zMzMsOS41NjksMjEuMzMzLDIxLjMzMw0KCQlTNDMzLjY4NSwyNTMuNjMsNDIxLjkyNiwyNTMuNjN6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik0xMDkuMDM3LDIxMC45NjNjMTIuNTc0LDAsMjEuMzMzLDYuODcxLDIxLjMzMywxMy4wMzdjMCw2LjU0Niw1LjMwNiwxMS44NTIsMTEuODUyLDExLjg1Mg0KCQljNi41NDYsMCwxMS44NTItNS4zMDYsMTEuODUyLTExLjg1MmMwLTIwLjYwMi0xOS43ODctMzYuNzQxLTQ1LjAzNy0zNi43NDFTNjQsMjAzLjM5OCw2NCwyMjQNCgkJYzAsMjguNDk1LDI1LjY5NSwzNy42NzYsNDEuMDQ3LDQzLjE2MmMyMS42NjYsNy43MzYsMjUuMzI0LDEyLjY4LDI1LjMyNCwyMC44MzhjMCw2LjE2Ny04Ljc2LDEzLjAzNy0yMS4zMzMsMTMuMDM3DQoJCVM4Ny43MDQsMjk0LjE2Nyw4Ny43MDQsMjg4YzAtNi41NDYtNS4zMDYtMTEuODUyLTExLjg1Mi0xMS44NTJTNjQsMjgxLjQ1NCw2NCwyODhjMCwyMC42MDIsMTkuNzg3LDM2Ljc0MSw0NS4wMzcsMzYuNzQxDQoJCXM0NS4wMzctMTYuMTM5LDQ1LjAzNy0zNi43NDFjMC0yOC40OTUtMjUuNjk1LTM3LjY3Ni00MS4wNDctNDMuMTYyYy0yMS42NjYtNy43MzYtMjUuMzI0LTEyLjY4LTI1LjMyNC0yMC44MzgNCgkJQzg3LjcwNCwyMTcuODMzLDk2LjQ2MywyMTAuOTYzLDEwOS4wMzcsMjEwLjk2M3oiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+        />
+      </div>
+      <div class="circle yellow"></div>
+      <div class="circle green"></div>
     </div>
 
     <!----------------====================---------------->
@@ -68,8 +72,9 @@
     <!--         اجعل لون كل دائرة يظهر تدريجياً         -->
     <!----------------====================---------------->
     <!--                    الرابع                      -->
-    <!--   اجعل تحت كل دائرة طبقة تحمل كلمة قف، استعد   -->
-    <!--  أو تحرك واجعلها تظهر عند المرور على الدائرة   -->
+    <!--   اجعل تحت الدائرة الحمراء طبقة تحمل صورة قف   -->
+    <!--      واجعلها تظهر عند المرور على الدائرة       -->
+    <!-- position: relative لا يعمل إلا مع z-index :تلميح -->
     <!----------------====================---------------->
   </body>
 </html>
